@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Countries</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script type="text/javascript" src="./js/bundle.js"></script>
+  </head>
+  <body>
+
+    <div id="app">
+      <h1>Countries</h1>
+<button v-on:click="showCountry">Show me where you come fae</button>
+
+      <h1>World Populataion:{{totalPop}}</h1>
+
+      <div id="filterCountry">
+        <h3>Select Country</h3>
+        <select v-on:change="selectCountry">
+          <option v-for="(country, index) in countries" :value="index"  >{{ country.name }}</option>
+        </select>
+      </div>
+
+      <img v-if="selectedCountry" :src="selectedCountry.flag" alt="country flag">
+
+    </div>
+
+
+
+
+  </body>
+</html>
